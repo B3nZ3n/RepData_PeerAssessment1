@@ -106,7 +106,7 @@ df2$weekday <- factor(ifelse(weekdays(df2$date) %in% c("samedi","dimanche"), "we
 stepsperdaytype <- aggregate(x= df2$steps,by=list(df2$interval,df2$weekday), FUN="mean")
 
 library(ggplot2)
-ggplot(stepsperdaytype,aes(x=x,y=Group.1,color=Group.2),xlab="Interval",ylab="Average steps") + geom_line() + facet_grid(stepsperdaytype$Group.2 ~ .)
+ggplot(stepsperdaytype,aes(x=x,y=Group.1,color=Group.2)) + geom_line() + xlab("Interval") + ylab("Average steps") + facet_grid(stepsperdaytype$Group.2 ~ .)
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
